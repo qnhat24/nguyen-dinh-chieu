@@ -124,7 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
         careerContent.classList.add("hidden");
     });
 });
-document.addEventListener("DOMContentLoaded", function () { 
+
+document.addEventListener("DOMContentLoaded", function () {
     const quotes = [
         ["Chở bao nhiêu đạo thuyền không khẳm,", "đâm mấy thằng gian bút chẳng tà."],
         ["Thà đui mà giữ đạo nhà,", "còn hơn sáng mắt mà thờ Tây Dương."],
@@ -136,21 +137,21 @@ document.addEventListener("DOMContentLoaded", function () {
     let quoteTextElement = document.getElementById("quote-text");
 
     function typeEffect(text1, text2) {
-        let textContent = ""; 
+        let textContent = "";
         let index1 = 0, index2 = 0;
         let cursorElement = '<img src="images/chuot.png" class="cursor">';  // Con trỏ hình ảnh
 
         function typingFirstLine() {
             if (index1 < text1.length) {
                 textContent = text1.slice(0, index1 + 1) + cursorElement;  // Con trỏ được thêm vào dòng 1
-                quoteTextElement.innerHTML = textContent; 
+                quoteTextElement.innerHTML = textContent;
                 index1++;
                 setTimeout(typingFirstLine, 100);
             } else {
                 // Ẩn con trỏ sau khi dòng 1 viết xong
                 textContent = text1 + "<br>";  // Ẩn con trỏ dòng 1
                 quoteTextElement.innerHTML = textContent;
-                setTimeout(function() {
+                setTimeout(function () {
                     // Tạo con trỏ mới ở dòng 2 và tiếp tục gõ dòng 2
                     quoteTextElement.innerHTML = text1 + "<br>" + cursorElement;
                     typingSecondLine();
@@ -161,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function typingSecondLine() {
             if (index2 < text2.length) {
                 textContent = text1 + "<br>" + text2.slice(0, index2 + 1) + cursorElement;  // Con trỏ xuất hiện ở dòng 2
-                quoteTextElement.innerHTML = textContent; 
+                quoteTextElement.innerHTML = textContent;
                 index2++;
                 setTimeout(typingSecondLine, 100);
             } else {
