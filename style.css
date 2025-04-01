@@ -355,7 +355,7 @@ button.clicked {
 }
 #quote-text {
     position: relative;
-    font-size: 10px; /* Giảm kích thước font */
+    font-size: 8px; /* Giảm kích thước font */
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     color: black;
