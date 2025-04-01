@@ -27,15 +27,6 @@ body {
     max-width: 100%;
 }
 
-.vinhdanh {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.vinhdanh iframe {
-    max-width: 100%;
-}
-
 .portrait {
     width: 200px;
     height: 200px;
@@ -298,11 +289,14 @@ button.clicked {
     width: 100%;
     height: 100px;  /* Điều chỉnh chiều cao phù hợp */
     overflow: hidden;
-    font-size: 20px;
+    font-size: 5px;  /* Giảm kích thước font-size */
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;  /* Căn giữa theo chiều ngang */
     align-items: center;      /* Căn giữa theo chiều dọc */
+    word-wrap: break-word;    /* Cho phép chữ tự động xuống dòng nếu cần */
+    padding: 0 10px;          /* Thêm padding nếu cần để tránh chữ sát viền */
+    box-sizing: border-box;   /* Đảm bảo padding không làm lệch kích thước của container */
 }
 
 .quote-text {
@@ -312,10 +306,9 @@ button.clicked {
     font-weight: bold;  /* Chữ in đậm */
     color: black;       /* Chữ màu đen */
     opacity: 1;         /* Đảm bảo chữ xuất hiện */
-    white-space: nowrap; /* Đảm bảo không có xuống dòng */
+    white-space: normal; /* Cho phép xuống dòng nếu cần */
     text-align: center;  /* Căn giữa chữ theo chiều ngang */
-    width: auto;         /* Chiều rộng tự động, không cố định */
-    max-width: 100%;     /* Tối đa chiếm 100% chiều rộng của container */
+    width: 100%;         /* Đảm bảo chữ chiếm 100% chiều rộng của container */
     animation: typing 3s steps(30) 1s 1 normal forwards, erasing 2s steps(30) 4s 1 normal forwards;
 }
 
@@ -338,6 +331,15 @@ button.clicked {
         width: 0;
     }
 }
+
+/* Media Queries cho thiết bị di động */
+@media (max-width: 500500px) {
+    .quotes-container {
+        font-size: 3vw; /* Giảm thêm kích thước chữ trên thiết bị di động */
+        height: 100px;  /* Tăng chiều cao cho container nếu cần */
+    }
+}
+
 #honor-content {
     padding: 20px;
     background-color: #f9f9f9;
