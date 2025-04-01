@@ -224,20 +224,6 @@ document.addEventListener("DOMContentLoaded", function () {
         @keyframes blink {
             50% { opacity: 0; }
         }
-        #quote-text {
-            position: relative;
-            font-size: 20px;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-            color: black;
-            white-space: nowrap;
-            text-align: center;
-            width: 100%;
-            max-width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
     `;
     document.head.appendChild(style);
 });

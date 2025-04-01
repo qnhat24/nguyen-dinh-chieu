@@ -70,10 +70,17 @@ button {
     cursor: pointer;
     transition: 0.3s;
     font-size: 18px;
+    position: relative;
 }
 
 button:hover {
     background-color: #a0522d;
+}
+
+/* Thêm hiệu ứng khi nhấn */
+button.clicked {
+    transform: scale(0.95);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .hidden {
@@ -182,7 +189,7 @@ button:hover {
     margin-top: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     font-size: 18px;
-    color: black; /* Chuyển toàn bộ chữ trong nội dung thành đen */
+    color: black;
     line-height: 1.8;
 }
 
@@ -199,26 +206,6 @@ button:hover {
     transform: scale(1.1);
 }
 
-#introduction-content p {
-    font-size: 18px;
-    color: black;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-#introduction-content img.tuong {
-    width: 100%;
-    max-width: 450px;
-    border-radius: 10px;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    transition: transform 0.3s ease;
-    object-fit: cover;
-}
-
 .author-info {
     text-align: left;
     margin-top: 20px;
@@ -230,14 +217,14 @@ button:hover {
 
 .author-title {
     font-size: 18px;
-    color: black; /* Chuyển màu chữ thành đen */
+    color: black;
     margin-bottom: 10px;
     line-height: 1.6;
 }
 
 .author-title strong {
     font-weight: bold;
-    color: black; /* Giữ chữ đậm màu đen */
+    color: black;
 }
 
 @media screen and (max-width: 768px) {
@@ -255,62 +242,28 @@ ul {
     margin: 0 auto;
     display: inline-block;
     font-size: 18px;
-    color: black; /* Chuyển toàn bộ chữ thành đen */
+    color: black;
     line-height: 1.8;
 }
 
 ul li {
     margin-bottom: 10px;
 }
-button {
-    background-color: #8b4513;
-    color: white;
-    padding: 14px 20px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 18px;
-    position: relative;
-}
 
-button:hover {
-    background-color: #a0522d;
-}
-
-/* Thêm hiệu ứng khi nhấn */
-button.clicked {
-    transform: scale(0.95);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-}
+/* Quotes Section */
 .quotes-container {
     position: relative;
-    width: 110%;
-    height: 80px;  /* Điều chỉnh chiều cao container */
-    overflow: hidden; /* Đảm bảo nội dung không vượt ra ngoài container */
-    font-size: 12px;  /* Kích thước chữ cố định nhỏ hơn */
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    font-size: 12px;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
-    justify-content: center;  /* Căn giữa theo chiều ngang */
-    align-items: center;      /* Căn giữa theo chiều dọc */
-    word-wrap: break-word;    /* Cho phép chữ tự động xuống dòng nếu cần */
-    padding: 0 10px;          /* Thêm padding để tránh chữ sát viền */
-    box-sizing: border-box;   /* Đảm bảo padding không làm lệch kích thước của container */
-}
-
-.quote-text {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);  /* Căn giữa theo chiều dọc */
-    font-weight: bold;  /* Chữ in đậm */
-    color: black;       /* Chữ màu đen */
-    opacity: 1;         /* Đảm bảo chữ xuất hiện */
-    white-space: normal; /* Cho phép xuống dòng nếu cần */
-    text-align: center;  /* Căn giữa chữ theo chiều ngang */
-    width: 100%;         /* Đảm bảo chữ chiếm 100% chiều rộng của container */
-    max-width: 90%;      /* Giới hạn độ rộng chữ để nó không vượt quá container */
-    animation: typing 3s steps(30) 1s 1 normal forwards, erasing 2s steps(30) 4s 1 normal forwards;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 @keyframes typing {
@@ -324,45 +277,23 @@ button.clicked {
     }
 }
 
-@keyframes erasing {
-    0% {
-        width: 100%;
-    }
-    100% {
-        width: 0;
-    }
-}
-
-/* Media Queries cho thiết bị di động */
 @media (max-width: 500px) {
     .quotes-container {
-        font-size: 10px;  /* Giảm kích thước chữ cho thiết bị di động */
-        height: 50px;  /* Tăng chiều cao container nếu cần */
+        font-size: 10px;
+        height: 50px;
     }
 }
 
-#honor-content {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#honor-content h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
 #quote-text {
     position: relative;
-    font-size: 8px; /* Giảm kích thước font */
+    font-size: 12.5px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     color: black;
     white-space: nowrap;
     text-align: center;
-    width: 90%; /* Điều chỉnh chiều rộng */
-    max-width: 500px; /* Đặt max-width để đảm bảo không quá lớn */
-    margin: 0 auto; /* Căn giữa */
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
     padding: 10px;
 }
