@@ -27,6 +27,15 @@ body {
     max-width: 100%;
 }
 
+.vinhdanh {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.vinhdanh iframe {
+    max-width: 100%;
+}
+
 .portrait {
     width: 200px;
     height: 200px;
@@ -328,4 +337,16 @@ button.clicked {
     100% {
         width: 0;
     }
+}
+#honor-content {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#honor-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
