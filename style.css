@@ -56,7 +56,7 @@ body {
 .author-info, 
 ul li, 
 #introduction-content p {
-    font-size: 20px; /* Tăng kích thước chữ */
+    font-size: 30px; /* Tăng kích thước chữ */
     color: black; /* Chuyển màu chữ thành đen */
 }
 
@@ -287,15 +287,15 @@ button.clicked {
 .quotes-container {
     position: relative;
     width: 100%;
-    height: 100px;  /* Điều chỉnh chiều cao phù hợp */
-    overflow: hidden;
-    font-size: 5px;  /* Giảm kích thước font-size */
+    height: 100px;  /* Điều chỉnh chiều cao container */
+    overflow: hidden; /* Đảm bảo nội dung không vượt ra ngoài container */
+    font-size: 12px;  /* Kích thước chữ cố định nhỏ hơn */
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;  /* Căn giữa theo chiều ngang */
     align-items: center;      /* Căn giữa theo chiều dọc */
     word-wrap: break-word;    /* Cho phép chữ tự động xuống dòng nếu cần */
-    padding: 0 10px;          /* Thêm padding nếu cần để tránh chữ sát viền */
+    padding: 0 10px;          /* Thêm padding để tránh chữ sát viền */
     box-sizing: border-box;   /* Đảm bảo padding không làm lệch kích thước của container */
 }
 
@@ -309,6 +309,7 @@ button.clicked {
     white-space: normal; /* Cho phép xuống dòng nếu cần */
     text-align: center;  /* Căn giữa chữ theo chiều ngang */
     width: 100%;         /* Đảm bảo chữ chiếm 100% chiều rộng của container */
+    max-width: 90%;      /* Giới hạn độ rộng chữ để nó không vượt quá container */
     animation: typing 3s steps(30) 1s 1 normal forwards, erasing 2s steps(30) 4s 1 normal forwards;
 }
 
@@ -333,10 +334,10 @@ button.clicked {
 }
 
 /* Media Queries cho thiết bị di động */
-@media (max-width: 500500px) {
+@media (max-width: 500px) {
     .quotes-container {
-        font-size: 3vw; /* Giảm thêm kích thước chữ trên thiết bị di động */
-        height: 100px;  /* Tăng chiều cao cho container nếu cần */
+        font-size: 10px;  /* Giảm kích thước chữ cho thiết bị di động */
+        height: 120px;  /* Tăng chiều cao container nếu cần */
     }
 }
 
